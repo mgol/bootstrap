@@ -58,25 +58,25 @@ const browsers = {
     browser: 'IE',
     browser_version: '10.0'
   },
-  iphoneX: {
+  iphone17: {
     base: 'BrowserStack',
     os: 'ios',
-    os_version: '11.0',
-    device: 'iPhone X',
+    os_version: '26.0',
+    device: 'iPhone 17',
     real_mobile: true
   },
-  iphone12: {
+  iphone16: {
     base: 'BrowserStack',
     os: 'ios',
-    os_version: '14.0',
-    device: 'iPhone 12',
+    os_version: '18.0',
+    device: 'iPhone 16',
     real_mobile: true
   },
-  pixel2: {
+  pixel9: {
     base: 'BrowserStack',
     os: 'android',
-    os_version: '8.0',
-    device: 'Google Pixel 2',
+    os_version: '16.0',
+    device: 'Google Pixel 9',
     real_mobile: true
   }
 }

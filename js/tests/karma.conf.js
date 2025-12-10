@@ -50,6 +50,7 @@ const detectBrowsers = {
 }
 
 let files = [
+  'node_modules/native-promise-only/lib/npo.src.js',
   'node_modules/popper.js/dist/umd/popper.min.js',
   'node_modules/hammer-simulator/index.js'
 ]

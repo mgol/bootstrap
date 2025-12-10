@@ -298,19 +298,22 @@ $(function () {
 
     var done = assert.async()
     var testElementIsActiveAfterScroll = function (element, target) {
-      var deferred = $.Deferred()
+      var resolve
+      var promise = new Promise(function(res, rej) {
+        resolve = res
+      })
       // add top padding to fix Chrome on Android failures
       var paddingTop = 5
       var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top) + paddingTop
       $content.one('scroll', function () {
         assert.true($(element).hasClass('active'), 'target:' + target + ', element' + element)
-        deferred.resolve()
+        resolve()
       })
       $content.scrollTop(scrollHeight)
-      return deferred.promise()
+      return promise
     }
 
-    $.when(testElementIsActiveAfterScroll('#a-1', '#div-1'))
+    testElementIsActiveAfterScroll('#a-1', '#div-1')
       .then(function () {
         return testElementIsActiveAfterScroll('#a-2', '#div-2')
       })
@@ -344,19 +347,22 @@ $(function () {
 
     var done = assert.async()
     var testElementIsActiveAfterScroll = function (element, target) {
-      var deferred = $.Deferred()
+      var resolve
+      var promise = new Promise(function(res, rej) {
+        resolve = res
+      })
       // add top padding to fix Chrome on Android failures
       var paddingTop = 5
       var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top) + paddingTop
       $content.one('scroll', function () {
         assert.true($(element).hasClass('active'), 'target:' + target + ', element' + element)
-        deferred.resolve()
+        resolve()
       })
       $content.scrollTop(scrollHeight)
-      return deferred.promise()
+      return promise
     }
 
-    $.when(testElementIsActiveAfterScroll('#a-1', '#div-1'))
+    testElementIsActiveAfterScroll('#a-1', '#div-1')
       .then(function () {
         return testElementIsActiveAfterScroll('#a-2', '#div-2')
       })
@@ -390,19 +396,22 @@ $(function () {
 
     var done = assert.async()
     var testElementIsActiveAfterScroll = function (element, target) {
-      var deferred = $.Deferred()
+      var resolve
+      var promise = new Promise(function(res, rej) {
+        resolve = res
+      })
       // add top padding to fix Chrome on Android failures
       var paddingTop = 5
       var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top) + paddingTop
       $content.one('scroll', function () {
         assert.true($(element).hasClass('active'), 'target:' + target + ', element' + element)
-        deferred.resolve()
+        resolve()
       })
       $content.scrollTop(scrollHeight)
-      return deferred.promise()
+      return promise
     }
 
-    $.when(testElementIsActiveAfterScroll('#a-1', '#div-1'))
+    testElementIsActiveAfterScroll('#a-1', '#div-1')
       .then(function () {
         return testElementIsActiveAfterScroll('#a-2', '#div-2')
       })
@@ -707,20 +716,23 @@ $(function () {
       })
 
     var testElementIsActiveAfterScroll = function (element, target) {
-      var deferred = $.Deferred()
+      var resolve
+      var promise = new Promise(function(res) {
+        resolve = res
+      })
       // add top padding to fix Chrome on Android failures
       var paddingTop = 5
       var scrollHeight = Math.ceil($content.scrollTop() + $(target).position().top) + paddingTop
       $content.one('scroll', function () {
         assert.true($(element).hasClass('active'), 'target:' + target + ', element: ' + element)
-        deferred.resolve()
+        resolve()
       })
       $content.scrollTop(scrollHeight)
-      return deferred.promise()
+      return promise
     }
 
     var done = assert.async()
-    $.when(testElementIsActiveAfterScroll('#li-100-5', '#div-100-5'))
+    testElementIsActiveAfterScroll('#li-100-5', '#div-100-5')
       .then(function () {
         return testElementIsActiveAfterScroll('#li-100-4', '#div-100-4')
       })
